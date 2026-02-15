@@ -4,7 +4,9 @@
   "description": "In this Project, I will attempt to build a simple todo list web-based application where I try to apply what I've learned so far of modern methods of building application with JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "app": "node src/index.js",
+    "serve": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
     "html-webpack-plugin": "^5.6.6",
     "style-loader": "^4.0.0",
     "webpack": "^5.105.1",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
   }
 }
