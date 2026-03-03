@@ -1,25 +1,24 @@
-import { app } from "./todoApp";
-import { Project } from "./project";
-import { TodoItem } from "./todoItem";
+import "./styles.css";
+import { displayProject } from "./project/projectLogic";
+// Listening for a new project creation
+const addProjectBtn = document.querySelector(".add-project-btn");
+export const addProjectDialog = document.querySelector("#add-project-dialog");
+const addBtn_form = addProjectDialog.querySelector(".add-btn");
+addProjectBtn.addEventListener("click", () => addProjectDialog.showModal());
+addBtn_form.addEventListener("click", displayProject);
 
-app.addProject("Default");
-app.addProject("My first project");
-const firstTodo = new TodoItem(
-  "Default",
-  "My first todo!",
-  "Hey, this is my first task here.",
-  "today",
-  "high",
-);
-const firstTodoInFirstProject = new TodoItem(
-  "My first project",
-  "My first todo in this new project!",
-  "Hey, this is my first task here.",
-  "tomorrow",
-  "medium",
-);
-app.projects[0].deleteTodo(firstTodoInFirstProject);
-app.projects.forEach((project) => {
-  project.showAllTodos();
-});
-console.log(firstTodoInFirstProject.projectUnder);
+// app.addProject("Default");
+// app
+//   .getProject("Default")
+//   .addTodo("Welcome", "This is my first todo", "today", "high", true);
+// // console.table(app.getProject("Default").getTodos());
+// //
+// app.addProject("Hi");
+// app
+//   .getProject("Hi")
+//   .addTodo("Hi", "This is my first todo", "today", "Low", true);
+
+// app
+//   .getProject("Hi")
+//   .addTodo("Hi", "This is my first todo", "today", "Low", true);
+// console.table(app.getProject("Hi").getTodos());
