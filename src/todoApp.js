@@ -1,7 +1,7 @@
 import { Project } from "./project/project";
 class TodoApp {
   constructor() {
-    this.activeProject = "Default";
+    this.activeProject = "Get started";
   }
   #projects = [];
   addProject(projectTitle) {

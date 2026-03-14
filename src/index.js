@@ -53,6 +53,6 @@ submit_form_edit.removeEventListener("click", editTodo);
 submit_form_edit.addEventListener("click", editTodo);
 
 // Setting up a default project
-app.addProject("Default");
-displaySavedProjects(app.getProject("Default"));
+app.addProject("Get started");
+displaySavedProjects(app.getProject("Get started"));
 buildProjectPage();
