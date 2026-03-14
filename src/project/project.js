@@ -4,12 +4,12 @@ export class Project {
   constructor(title) {
     this.title = title;
     this.id = crypto.randomUUID();
+    this.activeTodo;
   }
-  addTodo(title, description, dueDate, priority, isCompleted) {
+  addTodo(title, description, dueDate, priority, projectUnder) {
     this.#toDos.push(
-      new TodoItem(title, description, dueDate, priority, isCompleted),
+      new TodoItem(title, description, dueDate, priority, projectUnder),
     );
-    // console.log(`Task added to ${this.title}`);
   }
   getTodos() {
     return this.#toDos;

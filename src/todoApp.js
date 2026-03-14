@@ -38,7 +38,6 @@ class TodoApp {
         console.log(this.#projects);
         // Remove one project from the project found
         this.#projects.splice(projectIndex, 1);
-        console.log(this.#projects);
       }
     }
   }
