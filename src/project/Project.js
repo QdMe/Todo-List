@@ -1,4 +1,4 @@
-import { TodoItem } from "../todo/todoItem";
+import { Todo } from "../todo/Todo";
 export class Project {
   #toDos = [];
   constructor(title) {
@@ -8,7 +8,7 @@ export class Project {
   }
   addTodo(title, description, dueDate, priority, projectUnder) {
     this.#toDos.push(
-      new TodoItem(title, description, dueDate, priority, projectUnder),
+      new Todo(title, description, dueDate, priority, projectUnder),
     );
   }
   getTodos() {
@@ -17,14 +17,13 @@ export class Project {
   deleteTodo(todoId) {
     // Loop over all todos of current project if a todo with the same to id given found
     // Find the index of that todo and delete it
-    for (const todo of this.#toDos) {
-      if (todoId == todo.id) {
-        const todoIndex = this.#toDos.findIndex((item) => {
-          return todoId === item.id; // Gotchaa: u need to use return in arrow functions
-        });
-        this.#toDos.splice(todoIndex, 1); // starting from the index fount, remove 1 item
-      }
-    }
+
+    // Option one
+    // const todoToDelete = this.#toDos.find((todo) => todo.id === todoId);
+    // this.#toDos.splice(this.#toDos.findIndex(todoToDelete), 1);
+
+    // Option two (cleaner)
+    this.#toDos = this.#toDos.filter((todo) => todo.id !== todoId);
   }
   updateTitle(newTitle) {
     this.title = newTitle;
